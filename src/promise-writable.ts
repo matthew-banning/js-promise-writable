@@ -20,9 +20,9 @@ export class PromiseWritable<TWritable extends WritableStream> {
     stream.on("error", this.errorHandler)
   }
 
-  static [Symbol.hasInstance](instance: PromiseWritable<WritableStream>): boolean {
-    return instance._isPromiseWritable
-  }
+  // static [Symbol.hasInstance](instance: PromiseWritable<WritableStream>): boolean {
+  //   return instance._isPromiseWritable
+  // }
 
   write(chunk: string | Buffer, encoding?: BufferEncoding): Promise<number> {
     const stream = this.stream
